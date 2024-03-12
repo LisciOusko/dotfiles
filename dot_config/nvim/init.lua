@@ -5,7 +5,6 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.cmd [[colorscheme industry]]
 
 
 require "paq" {
@@ -13,6 +12,17 @@ require "paq" {
     "neovim/nvim-lspconfig",
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 }
+
+
+require("tokyonight").setup({
+    style="moon",
+    transparent="true"
+})
+
+vim.cmd[[colorscheme tokyonight]]
+
+
+
 
 local nvim_lsp = require ("lspconfig")
 
@@ -48,6 +58,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 
+
+-- Clangd
 nvim_lsp.clangd.setup {
     cmd = {'clangd', '--background-index', '--compile-commands-dir', 'D:/systemc/excersies/build'},
     init_options = {

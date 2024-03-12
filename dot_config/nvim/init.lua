@@ -11,6 +11,7 @@ require "paq" {
     "savq/paq-nvim",
     "neovim/nvim-lspconfig",
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    "folke/tokyonight.nvim"
 }
 
 
